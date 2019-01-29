@@ -20,6 +20,10 @@ import "./style.css";
 // 	return (<li key ></li>)
 // }
 class CardItem extends Component {
+	handleSave(event) {
+		event.preventDefault();
+		console.log(this.props.books[this.props.index]);
+	}
 
 	render(){
 		return(
@@ -31,7 +35,7 @@ class CardItem extends Component {
 		  <div className="card-body">
 		    <h5 className="card-title">Special title treatment</h5>
 		    <p className="card-text"><span className="description"> Short description: </span>{this.props.description}</p>
-		    <a href="#" className="btn btn-primary">Save</a>
+		    <a href="#" className="btn btn-primary" onClick={event => {this.handleSave(event)}}>Save</a>
 		  </div>
 		 </div>
 

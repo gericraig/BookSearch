@@ -72,8 +72,9 @@ class Books extends Component {
         
         <div>
           
-           {this.state.books.map(book => (
-             <CardItem  key={book.id} title={book.volumeInfo.title} description={book.volumeInfo.description}/>
+        {/* 3 parameter...first is element, second is index, and third is whole array that we are mapping */}
+           {this.state.books.map((book, i, books) => (
+             <CardItem  key={book.id} id={book.id}  books={books} index={i} title={book.volumeInfo.title} description={book.volumeInfo.description}/>
             
             //console.log("title",book.title)
 
